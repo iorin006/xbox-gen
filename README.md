@@ -17,6 +17,4 @@
 <br>     105.~     https://chromedriver.storage.googleapis.com/index.html?path=105.0.5195.52/</br>
 <br>     104.~     https://chromedriver.storage.googleapis.com/index.html?path=104.0.5112.79/</br>
 
-<img src="スクリーンショット 2022-09-27 23.07.54.png" alt="img">
-
 それでも出来ない時はDMでバージョンを言ってくればDLします。😄
