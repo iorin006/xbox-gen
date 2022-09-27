@@ -13,8 +13,8 @@
 
 <リンク>
 <br><a href="https://chromedriver.chromium.org/downloads">Chrome driver公式</a></br>
-<br>     106.0~     https://chromedriver.storage.googleapis.com/index.html?path=106.0.5249.21/</br>
-<br>     105.0~     https://chromedriver.storage.googleapis.com/index.html?path=105.0.5195.52/</br>
-<br>     104.0~     https://chromedriver.storage.googleapis.com/index.html?path=104.0.5112.79/</br>
+<br>     106.0.~     https://chromedriver.storage.googleapis.com/index.html?path=106.0.5249.21/</br>
+<br>     105.0.~     https://chromedriver.storage.googleapis.com/index.html?path=105.0.5195.52/</br>
+<br>     104.0.~     https://chromedriver.storage.googleapis.com/index.html?path=104.0.5112.79/</br>
 
 それでも出来ない時はDMでバージョンを言ってくればDLします。😄
