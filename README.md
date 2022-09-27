@@ -10,8 +10,8 @@
 <br>例）104.0.5112.81の場合　104のドライバーをダウンロードしましょう。</br>
 <br>ダウンロードしたドライバーとexe同じ場所におきましょう。></br>
 
-<a href="https://chromedriver.chromium.org/downloads"><リンク></a>
-<br>Chromeのバージョン</br>
+<リンク>
+<br><a href="https://chromedriver.chromium.org/downloads"><Chrome driver公式></a></br>
 <br>     106.~     https://chromedriver.storage.googleapis.com/index.html?path=106.0.5249.21/</br>
 <br>     105.~     https://chromedriver.storage.googleapis.com/index.html?path=105.0.5195.52/</br>
 <br>     104.~     https://chromedriver.storage.googleapis.com/index.html?path=104.0.5112.79/</br>
