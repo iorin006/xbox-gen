@@ -4,14 +4,12 @@
 認証は人間が行ってください。
 
 ＜注意＞
-
-・Chromeが入っていないと動きません。
-
+<br>・Chromeが入っていないと動きません。</br>
 ・Chromeにあうドライバーが必要です
 
 ・選ぶバージョンは、サイトに飛んで上から三つの中で選択してください(下にバージョンがない場合は)
 
-                                      リンク
+リンク
 Chromeのバージョン
      106.~     https://chromedriver.storage.googleapis.com/index.html?path=106.0.5249.21/
      105.~     https://chromedriver.storage.googleapis.com/index.html?path=105.0.5195.52/
