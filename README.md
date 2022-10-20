@@ -18,3 +18,4 @@
 <br>     104.0.~     https://chromedriver.storage.googleapis.com/index.html?path=104.0.5112.79/</br>
 
 それでも出来ない時はDMでバージョンを言ってくればDLします。😄
+できるだけ丁寧に説明したつもりですが....
