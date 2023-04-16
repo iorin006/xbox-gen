@@ -2,22 +2,23 @@ import random
 import string
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 import time
 import threading
+print('\033[35m'
+      '  ____ ____ ____ ____ _  _ _  _ ___    ____ ____ _  _ ____ ____ ____ ___ ____ ____ \n'
+      '  |__| |    |    |  | |  | |\ |  |     | __ |___ |\ | |___ |__/ |__|  |  |  | |__/ \n'
+      '  |  | |___ |___ |__| |__| | \|  |     |__] |___ | \| |___ |  \ |  |  |  |__| |  \ \n'
+      '  \033[0m')
 
-print('▀████    ▐████▀ ▀█████████▄   ▄██████▄  ▀████    ▐████▀         ▄████████  ▄████████  ▄████████  ▄██████▄  ███    █▄  ███▄▄▄▄       ███     ')
-print('  ███▌   ████▀    ███    ███ ███    ███   ███▌   ████▀         ███    ███ ███    ███ ███    ███ ███    ███ ███    ███ ███▀▀▀██▄ ▀█████████▄ ')
-print('   ███  ▐███      ███    ███ ███    ███    ███  ▐███           ███    ███ ███    █▀  ███    █▀  ███    ███ ███    ███ ███   ███    ▀███▀▀██ ')
-print('   ▀███▄███▀     ▄███▄▄▄██▀  ███    ███    ▀███▄███▀           ███    ███ ███        ███        ███    ███ ███    ███ ███   ███     ███   ▀ ')
-print('   ████▀██▄     ▀▀███▀▀▀██▄  ███    ███    ████▀██▄          ▀███████████ ███        ███        ███    ███ ███    ███ ███   ███     ███     ')
-print('  ▐███  ▀███      ███    ██▄ ███    ███   ▐███  ▀███           ███    ███ ███    █▄  ███    █▄  ███    ███ ███    ███ ███   ███     ███     ')
-print(' ▄███     ███▄    ███    ███ ███    ███  ▄███     ███▄         ███    ███ ███    ███ ███    ███ ███    ███ ███    ███ ███   ███     ███     ')
-print('████       ███▄ ▄█████████▀   ▀██████▀  ████       ███▄        ███    █▀  ████████▀  ████████▀   ▀██████▀  ████████▀   ▀█   █▀     ▄████▀   ')                                                                                                                                            
-print('')
-print('全画面表示推奨')                                           
-print('この黒い画面は自動で閉じます。手動で閉じないでください。')
-print('作成するアカウントの個数を選択してください。')
-count = int(input(">"))
+
+text = "\033[32mアカウントジェネレーター\033[0m" + \
+    '\nこの黒い画面は自動で閉じます手動で閉じないでください' + '\n作成するアカウントの個数を選択してください。\n'
+for char in text:
+    print(char, end='', flush=True)
+    time.sleep(0.03)
+
+count = int(input('>'))
 name = 0
 
 
@@ -60,7 +61,7 @@ def gen():
    g = browser.find_element(By.ID, 'iSignupAction')
    g.click()
    # パスワードどメールアドレスを作成
-   f = open(f'{name}pack.txt', 'a')
+   f = open(f'{name}pack.txt', 'w')
    f.write(f'a{w}@outlook.jp\n{p}\n')
    # 田中を入力
    browser.implicitly_wait(20)
@@ -88,7 +89,7 @@ def gen():
    niti.send_keys('1')
 
    b4 = browser.find_element(By.ID, 'iSignupAction')
-   b4.click()
+   b4.send_keys(Keys.ENTER)
 
    browser.implicitly_wait(60000)
    b5 = browser.find_element(By.ID, 'idSIButton9')
@@ -97,9 +98,8 @@ def gen():
    browser.implicitly_wait(60)
    b6 = browser.find_element(By.ID, 'Accept')
    b6.click()
-   
-   browser.close()
 
+   browser.close()
 
 for e in range(count):
    t = threading.Thread(target=gen)
