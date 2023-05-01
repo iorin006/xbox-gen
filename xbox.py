@@ -13,10 +13,10 @@ print('\033[35m'
 
 
 text = "\033[32mアカウントジェネレーター\033[0m" + \
-    '\nこの黒い画面は自動で閉じます手動で閉じないでください' + '\n作成するアカウントの個数を選択してください。\n'
+    '\nこの黒い画面は自動で閉じます手動で閉じないでください' + '\n作成するアカウントの個数を選択してください。\n'+'一つのipで最大3までしか一度に作られません\n'
 for char in text:
     print(char, end='', flush=True)
-    time.sleep(0.03)
+    time.sleep(0.02)
 
 count = int(input('>'))
 name = 0
@@ -61,7 +61,7 @@ def gen():
    g = browser.find_element(By.ID, 'iSignupAction')
    g.click()
    # パスワードどメールアドレスを作成
-   f = open(f'{name}pack.txt', 'w')
+   f = open(f'{name}pack.txt', 'a')
    f.write(f'a{w}@outlook.jp\n{p}\n')
    # 田中を入力
    browser.implicitly_wait(20)
