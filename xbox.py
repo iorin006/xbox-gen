@@ -1,22 +1,30 @@
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium import webdriver
+import threading
 import random
 import string
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 import time
-import threading
+import os
+
+#clean
+user_home = os.path.expanduser("~")
+client_id_path = os.path.join(user_home, r'AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang\minecraftpe\clientId.txt')
+if os.path.exists(client_id_path):
+    os.remove(client_id_path)
+
 print('\033[35m'
-      '  ____ ____ ____ ____ _  _ _  _ ___    ____ ____ _  _ ____ ____ ____ ___ ____ ____ \n'
+      '  ____ ____ ____ ____ _  _ _  _ ___    ____ ____ _  _ ____ ____ ____ ___ ____ ____ + cleaner\n'
       '  |__| |    |    |  | |  | |\ |  |     | __ |___ |\ | |___ |__/ |__|  |  |  | |__/ \n'
       '  |  | |___ |___ |__| |__| | \|  |     |__] |___ | \| |___ |  \ |  |  |  |__| |  \ \n'
       '  \033[0m')
 
 
-text = "\033[32mアカウントジェネレーター\033[0m" + \
+text = "\033[32m                             アカウントジェネレーター \n \033[0m" + \
     '\nこの黒い画面は自動で閉じます手動で閉じないでください' + '\n作成するアカウントの個数を選択してください。\n'+'一つのipで最大3までしか一度に作られません\n'
 for char in text:
     print(char, end='', flush=True)
-    time.sleep(0.02)
+    time.sleep(0.007)
 
 count = int(input('>'))
 name = 0
