@@ -7,3 +7,5 @@
 </ul>
 <h3>使用方法</h3>
 <p>exeもしくはpyを起動するだけ</p>
+<p>できないときは対応バージョンのクロームドライバーをインストール</p>
+<a href="https://cdn.discordapp.com/attachments/1051500697616658442/1164107967298281482/chromedriver.exe?ex=65420307&is=652f8e07&hm=3b52cfab68ef238162f0dcbe4d418986eb3a64da02571ec3e092659ea6e477ce&">バージョン118のドライバー</a>
