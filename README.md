@@ -8,4 +8,4 @@
 <h3>使用方法</h3>
 <p>exeもしくはpyを起動するだけ</p>
 <p>できないときは対応バージョンのクロームドライバーをインストール</p>
-<a href="https://googlechromelabs.github.io/chrome-for-testing/">バージョン119のドライバー</a>
+<a href="https://googlechromelabs.github.io/chrome-for-testing/">バージョン120のドライバー</a>
