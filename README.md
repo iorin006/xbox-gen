@@ -6,6 +6,5 @@
   <li>Google Chromeが必要です</li>
 </ul>
 <h3>ダウンロード</h3>
-<a href="https://github.com/iorin006/xbox-gen/release/latest/download/xbox-gen.v120.zip
-">クリック</a>
+<a href="https://github.com/iorin006/xbox-gen/releases/">クリック</a>
 <a href="https://googlechromelabs.github.io/chrome-for-testing/">chromeドライバー 一覧</a>
