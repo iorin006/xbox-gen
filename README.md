@@ -6,5 +6,5 @@
   <li>Google Chromeが必要です</li>
 </ul>
 <h3>使用方法</h3>
-<p>code -> downloadZip -> xbox.ex Click!!</p>
+<p>code -> downloadZip -> xbox.exe Click!!</p>
 <a href="https://googlechromelabs.github.io/chrome-for-testing/">chromeドライバー 一覧</a>
