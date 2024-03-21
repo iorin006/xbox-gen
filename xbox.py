@@ -1,11 +1,8 @@
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium import webdriver
-import threading
-import random
-import string
-import time
-import os
+import random, string, threading
+import time, os
 user_home = os.path.expanduser("~")
 client_id_path = os.path.join(
     user_home,
@@ -13,23 +10,21 @@ client_id_path = os.path.join(
 )
 if os.path.exists(client_id_path):
     os.remove(client_id_path)
-print(
-    "\033[35m"
-    "  ____ ____ ____ ____ _  _ _  _ ___    ____ ____ _  _ ____ ____ ____ ___ ____ ____ + cleaner\n"
-    "  |__| |    |    |  | |  | |\ |  |     | __ |___ |\ | |___ |__/ |__|  |  |  | |__/ \n"
-    "  |  | |___ |___ |__| |__| | \|  |     |__] |___ | \| |___ |  \ |  |  |  |__| |  \ \n"
-    "  \033[0m"
-)
+
 text = (
     "\033[32m                             アカウントジェネレーター \n \033[0m"
-    + "\nこの黒い画面は自動で閉じます手動で閉じないでください"
-    + "\n作成するアカウントの個数を選択してください。\n"
-    + "一つのipで最大3までしか一度に作られません\n"
+    + "\n           この黒い画面は自動で閉じます手動で閉じないでください\n"+
+    "       preset.txtを作成しあらかじめ作成する個数を設定することもできます\n\n"
 )
-for char in text:
-    print(char, end="", flush=True)
-    time.sleep(0.007)
-count = int(input(">"))
+print(text)
+# preset.txtファイルの存在を確認
+if os.path.isfile('preset.txt'):
+    with open('preset.txt', 'r') as f:
+        count = int(f.read().strip())
+
+else:
+    count = int(input("いくつ生成しますか?(最大3) >"))
+
 name = 0
 def gen():
     global name
