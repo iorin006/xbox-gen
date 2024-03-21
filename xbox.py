@@ -17,7 +17,6 @@ text = (
     "       preset.txtを作成しあらかじめ作成する個数を設定することもできます\n\n"
 )
 print(text)
-# preset.txtファイルの存在を確認
 if os.path.isfile('preset.txt'):
     with open('preset.txt', 'r') as f:
         count = int(f.read().strip())
