@@ -12,4 +12,3 @@
 使い方
 <br>
 https://www.youtube.com/watch?v=N7xmR-FWq3o
-https://github.com/iorin006/xbox-gen/blob/main/2024-03-23%2018-33-49.mkv
