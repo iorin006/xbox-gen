@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium import webdriver
 import random, string, threading
 import time, os
+os.system('color 0A')
 user_home = os.path.expanduser("~")
 client_id_path = os.path.join(
     user_home,
@@ -12,7 +13,7 @@ if os.path.exists(client_id_path):
     os.remove(client_id_path)
 
 text = (
-    "\033[32m                             アカウントジェネレーター \n \033[0m"
+    "                             アカウントジェネレーター \n "
     + "\n           この黒い画面は自動で閉じます手動で閉じないでください\n"+
     "       preset.txtを作成しあらかじめ作成する個数を設定することもできます\n\n"
 )
@@ -40,26 +41,26 @@ def gen():
     )
     browser.implicitly_wait(20)
     browser.find_element(By.ID, "liveSwitch").click()
-    browser.find_element(By.ID, "MemberName").send_keys("a" + w)
-    browser.find_element(By.ID, "iSignupAction").click()
+    browser.find_element(By.ID, "usernameInput").send_keys("a" + w)
+    browser.find_element(By.ID, "nextButton").click()
     browser.implicitly_wait(20)
     p = randomname(10)
-    browser.find_element(By.ID, "PasswordInput").send_keys(p)
-    browser.find_element(By.ID, "iSignupAction").click()
+    browser.find_element(By.ID, "Password").send_keys(p)
+    browser.find_element(By.ID, "nextButton").click()
     f = open(f"{name}pack.txt", "a")
     f.write(f"a{w}@outlook.jp\n{p}\n")
     browser.implicitly_wait(20)
-    browser.find_element(By.ID, "LastName").send_keys("田中")
+    browser.find_element(By.ID, "lastNameInput").send_keys("田中")
     time.sleep(0.1)
-    browser.find_element(By.ID, "FirstName").send_keys("太郎")
-    browser.find_element(By.ID, "iSignupAction").click()
+    browser.find_element(By.ID, "firstNameInput").send_keys("太郎")
+    browser.find_element(By.ID, "nextButton").click()
     browser.implicitly_wait(60)
     browser.find_element(By.ID, "BirthYear").send_keys("1987")
     time.sleep(0.1)
     browser.find_element(By.ID, "BirthMonth").send_keys("1")
     time.sleep(0.1)
     browser.find_element(By.ID, "BirthDay").send_keys("1")
-    browser.find_element(By.ID, "iSignupAction").send_keys(Keys.ENTER)
+    browser.find_element(By.ID, "nextButton").click()
     browser.implicitly_wait(60000)
     browser.find_element(By.ID, "declineButton").click()
     browser.implicitly_wait(60)
