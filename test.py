@@ -1,4 +1,6 @@
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium import webdriver
 import random, string, threading
@@ -15,7 +17,6 @@ if os.path.exists(client_id_path):
 text = (
     "                             アカウントジェネレーター \n "
     + "\n           この黒い画面は自動で閉じます手動で閉じないでください\n"+
-    "         正しく動作しない場合はもう一つのexeファイルを実行してください\n"+
     "       preset.txtを作成しあらかじめ作成する個数を設定することもできます\n\n"
 )
 print(text)
@@ -40,26 +41,41 @@ def gen():
     browser.get(
         "https://signup.live.com/signup?wa=wsignin1.0&rpsnv=13&rver=7.3.6963.0&wp=MBI_SSL&wreply=https:%2f%2faccount.xbox.com%2fja-jp%2faccountcreation%3frtc%3d1%26csrf%3diRRDbBsXHWOzqJoxX9GqJOfUcAQCvJVJSNVhpu9YR0ntJtPfRjwCMjSg4qE1UQC4yx6KIvX4cVItbVhM5kW-6bAyA7o1&id=292543&aadredir=1&contextid=8369C2F0524F361B&bk=1602012918&uiflavor=web&lic=1&mkt=ja-jp&lc=1033&uaid=3ba71ae4427e4c300da204fc26106240"
     )
-    browser.implicitly_wait(20)
+
+    def timeout_id(driver, id_to_find, fallback_id, timeout=0.4):
+        try:
+            WebDriverWait(driver, timeout).until(
+                EC.presence_of_element_located((By.ID, id_to_find))
+        )
+            return id_to_find
+        except:
+            try:
+                WebDriverWait(driver, timeout).until(
+                    EC.presence_of_element_located((By.ID, fallback_id))
+                )
+                return fallback_id
+            except:
+               return None
+            
+    browser.implicitly_wait(1)   
     browser.find_element(By.ID, "liveSwitch").click()
-    browser.implicitly_wait(20)
-    browser.find_element(By.ID, "MemberName").send_keys("a" + w)
-    browser.find_element(By.ID, "iSignupAction").click()
-    browser.implicitly_wait(20)
+    browser.find_element(By.ID, timeout_id(browser, "MemberName", "usernameInput")).send_keys("a" + w)
+    browser.find_element(By.ID, timeout_id(browser, "iSignupAction", "nextButton")).click()
+    browser.implicitly_wait(1)
     p = randomname(10)
-    browser.find_element(By.ID, "PasswordInput").send_keys(p)
-    browser.find_element(By.ID, "iSignupAction").click()
+    browser.find_element(By.ID, timeout_id(browser, "Password", "PasswordInput")).send_keys(p)
+    browser.find_element(By.ID, timeout_id(browser, "iSignupAction", "nextButton")).click()
     f = open(f"{name}pack.txt", "a")
     f.write(f"a{w}@outlook.jp\n{p}\n")
-    browser.implicitly_wait(20)
-    browser.find_element(By.ID, "LastName").send_keys("1")
-    browser.find_element(By.ID, "FirstName").send_keys("1")
-    browser.find_element(By.ID, "iSignupAction").click()
-    browser.implicitly_wait(60)
+    browser.implicitly_wait(1)
+    browser.find_element(By.ID, timeout_id(browser, "lastNameInput", "LastName")).send_keys("1")
+    browser.find_element(By.ID, timeout_id(browser,"FirstName", "firstNameInput")).send_keys("1")
+    browser.find_element(By.ID, timeout_id(browser, "iSignupAction", "nextButton")).click()
+    browser.implicitly_wait(1)
     browser.find_element(By.ID, "BirthYear").send_keys("1987")
     browser.find_element(By.ID, "BirthMonth").send_keys("1")
     browser.find_element(By.ID, "BirthDay").send_keys("1")
-    browser.find_element(By.ID, "iSignupAction").send_keys(Keys.RETURN)
+    browser.find_element(By.ID, timeout_id(browser, "iSignupAction", "nextButton")).send_keys(Keys.RETURN)
     browser.implicitly_wait(60000)
     browser.find_element(By.ID, "declineButton").click()
     browser.implicitly_wait(60)
